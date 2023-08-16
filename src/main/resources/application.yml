@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
+spring:
+  datasource:
+    type: org.postgresql.ds.PGSimpleDataSource
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:Sniperzeck*007}
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:Customertest}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: ${DDL_AUTO:none}
+    properties:
+      hibernate:
+        default_schema: ${DB_SCHEMA_NAME:university}
+        dialect: org.hibernate.dialect.PostgreSQLDialect
